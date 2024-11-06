@@ -4,13 +4,14 @@ const allUsers = [
         gender: "male"
     },
     {
-        firstName: "Abhishek",
-        gender: "male"
-    },
-    {
         firstName: "Gauri",
         gender: "female"
+    },
+    {
+        firstName: "Abhishek",
+        gender: "male"
     }
+    
 ];
 
 for (let i = 0; i < allUsers.length; i++) {
