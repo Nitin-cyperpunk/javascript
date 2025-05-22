@@ -14,6 +14,5 @@ function doOperation(a, b, op) {
     return op(a, b);
 }
 
-// Example usage
 const ans = doOperation(1, 2, divide);
 console.log(ans);
