@@ -10,3 +10,5 @@ async function solve() {
     console.log("5 seconds have passed");
   }
 solve();
+
+console.log("This will execute immediately, before the timeouts finish.");
