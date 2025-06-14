@@ -10,13 +10,15 @@
         background: #000;
         color: antiquewhite;
         font-family: Arial, sans-serif;
-       
+        
+        
+        
     }
     h1{
         font:60px;
         color:antiquewhite;
         font-family: Verdana, Geneva, Tahoma, sans-serif;
-
+        
 
         }
         h1:hover{
@@ -32,10 +34,14 @@
             
             text-align: center;
         }
+        button:hover{
+            background-color: #45a049;
+            color: white;
+        }
 </style>
 <body>
     <h1>To Do List </h1>
-    
+    <div id="Todo"></div>
     <input type="text">
     <button onclick="addTodo()" value="Add ur task">Add</button>
 
@@ -43,7 +49,7 @@
 <script>
     let ctr = 1;
     function deleteTodo(index){
-    const element = document.getElementById(index);
+    const element = document.getElementById("todo-" + index);
     element.parentNode.removeChild(element);
 }
     function addTodo(){
@@ -51,10 +57,11 @@
         const value = inputEl.value;
 
         const newDivEl = document.createElement("div");
-        newDivEl.setAttribute("id", ctr);
+        newDivEl.setAttribute("id", "todo-" + ctr);
+        
+        newDivEl.innerHTML = "<ol><li><div><h2>" + value + '<button onclick="deleteTodo(' + ctr +')">Done</button></h2></div></li></ol> ';
+        document.querySelector("#Todo").appendChild(newDivEl);
         ctr = ctr + 1;
-        newDivEl.innerHTML = "<div>" + value + '</div><button onclick="deleteTodo(' + ctr +')">Delete</button>';
-        document.querySelector("body").appendChild(newDivEl);
     }
 
 </script>
